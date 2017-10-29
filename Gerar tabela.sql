@@ -50,11 +50,11 @@ ENGINE = InnoDB;
 -- Table `mydb`.`saida`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`saida` (
-  `id_entrada` INT NOT NULL AUTO_INCREMENT COMMENT '',
+  `id_saida` INT NOT NULL AUTO_INCREMENT COMMENT '',
   `id_produto` INT NOT NULL COMMENT '',
   `quantidade` INT NOT NULL COMMENT '',
   `data_saida` DATE NOT NULL COMMENT '',
-  PRIMARY KEY (`id_entrada`, `id_produto`)  COMMENT '',
+  PRIMARY KEY (`id_saida`, `id_produto`)  COMMENT '',
   INDEX `fk_saida_produtos1_idx` (`id_produto` ASC)  COMMENT '',
   UNIQUE INDEX `id_produto_UNIQUE` (`id_produto` ASC)  COMMENT '',
   CONSTRAINT `fk_saida_produtos1`
@@ -63,8 +63,3 @@ CREATE TABLE IF NOT EXISTS `mydb`.`saida` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
